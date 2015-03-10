@@ -7,8 +7,8 @@ DIST_DATA_DIR   = $(DIST_DIR)/www/data
 DATA_DIR		= $(HOME)/$(APP_NAME)/data
 
 ERLANG_BIN		= $(shell dirname $(shell which erl))
-REBAR           =  rebar
-REBAR_OPTS      = ""
+REBAR           = rebar
+REBAR_OPTS      = 
 OVERLAY_VARS    ?= ""
 
 REBAR_CONFIG_X86=rebar.config.x86
@@ -82,24 +82,21 @@ link:   dirs
 # 		mkdir -p $@/upload
 
 delete_pisec:
-		rm -rf deps/pisec
+	rm -rf deps/pisec
 
-compile:	setarch
-			$(REBAR) $(REBAR_OPTS) compile
-
-setarch:	deps
-			(cd deps/pisec && rm -f rebar.config && ln -s $(REBAR_CONFIG) rebar.config)
+compile:	
+	$(REBAR) $(REBAR_OPTS) compile
 
 deps:
-			$(REBAR) $(REBAR_OPTS) get-deps
+	$(REBAR) $(REBAR_OPTS) get-deps
 
 clean:		testclean
-			$(REBAR) $(REBAR_OPTS) clean
+	$(REBAR) $(REBAR_OPTS) clean
 
 distclean:	clean devclean relclean ballclean
-			$(REBAR) $(REBAR_OPTS) delete-deps
+	$(REBAR) $(REBAR_OPTS) delete-deps
 
 generate:
-			$(REBAR) $(REBAR_OPTS) --force generate $(OVERLAY_VARS)
+	$(REBAR) $(REBAR_OPTS) --force generate $(OVERLAY_VARS)
 
-rel:		init deps compile generate link
+rel:	init deps compile generate link
