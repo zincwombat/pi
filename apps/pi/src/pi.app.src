@@ -1,8 +1,0 @@
-%% -*- mode: erlang; -*-
-{application, pi,
- [{description, "Pi Master Application"},
-  {vsn, "1.0.0."},
-  {modules, []},
-  {registered, []},
-  {applications, [kernel, stdlib]},
-  {env, []}]}.
