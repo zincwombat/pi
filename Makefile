@@ -1,6 +1,6 @@
 PKG_REVISION    ?= $(shell git describe --tags)
 PKG_BUILD		= 1
-APP_NAME		= pi
+APP_NAME		= picontroller
 BASE_DIR		= $(shell pwd)
 DIST_DIR		= $(BASE_DIR)/rel/$(APP_NAME)
 DIST_DATA_DIR   = $(DIST_DIR)/www/data
