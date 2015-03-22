@@ -58,7 +58,7 @@ endif
 
 $(if $(ERLANG_BIN),,$(warning "Warning: No Erlang found in your path, this will probably not work"))
 
-.PHONY: rel deps redo delete_pisec get_pisec init 
+.PHONY: rel deps redo delete_pisec get_pisec
 
 all:    deps compile
 
@@ -99,4 +99,4 @@ distclean:	clean devclean relclean ballclean
 generate:
 	$(REBAR) $(REBAR_OPTS) --force generate $(OVERLAY_VARS)
 
-rel:	init deps compile generate link
+rel:	deps compile generate
