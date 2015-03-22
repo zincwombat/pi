@@ -58,7 +58,7 @@ endif
 
 $(if $(ERLANG_BIN),,$(warning "Warning: No Erlang found in your path, this will probably not work"))
 
-.PHONY: rel deps redo delete_pisec get_pisec init dirs
+.PHONY: rel deps redo delete_pisec get_pisec init 
 
 all:    deps compile
 
