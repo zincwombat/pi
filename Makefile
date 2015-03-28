@@ -7,8 +7,8 @@ DIST_DATA_DIR   = $(DIST_DIR)/www/data
 DATA_DIR		= $(HOME)/$(APP_NAME)/data
 
 ERLANG_BIN		= $(shell dirname $(shell which erl))
-REBAR           = rebar -vvv
-REBAR_OPTS      = 
+REBAR           = rebar
+REBAR_OPTS      = -vvv
 OVERLAY_VARS    ?= ""
 
 REBAR_CONFIG_X86=rebar.config.x86
