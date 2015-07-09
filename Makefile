@@ -8,7 +8,7 @@ DATA_DIR		= $(HOME)/$(APP_NAME)/data
 
 ERLANG_BIN		= $(shell dirname $(shell which erl))
 REBAR           = rebar
-REBAR_OPTS      = -vvv
+REBAR_OPTS      = 
 OVERLAY_VARS    ?= ""
 
 REBAR_CONFIG_X86=rebar.config.x86
